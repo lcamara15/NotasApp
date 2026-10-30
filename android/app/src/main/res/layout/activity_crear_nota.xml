@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_login">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:paddingTop="38dp"
+            android:paddingBottom="35dp">
+
+            <!-- Encabezado -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NOTASAPP  /  MI CUADERNO"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.12"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:text="Una nueva página."
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Escribe aquello que merece quedarse contigo."
+                android:textColor="#B8000000"
+                android:textSize="14sp"/>
+
+            <!-- Editor de notas -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="5dp"
+                app:strokeColor="#E2EAF5"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="23dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="✦  TU NUEVA NOTA"
+                        android:textColor="#6E8DB7"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.10"/>
+
+                    <!-- Título -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:hint="Título de la nota"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="15dp"
+                        app:boxCornerRadiusTopEnd="15dp"
+                        app:boxCornerRadiusBottomStart="15dp"
+                        app:boxCornerRadiusBottomEnd="15dp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="150">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTituloNota"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapSentences"
+                            android:maxLength="150"
+                            android:singleLine="true"
+                            android:textColor="#304F7A"
+                            android:textSize="15sp"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Contenido -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="19dp"
+                        android:hint="Escribe tus pensamientos..."
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="15dp"
+                        app:boxCornerRadiusTopEnd="15dp"
+                        app:boxCornerRadiusBottomStart="15dp"
+                        app:boxCornerRadiusBottomEnd="15dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etContenidoNota"
+                            android:layout_width="match_parent"
+                            android:layout_height="230dp"
+                            android:gravity="top|start"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:paddingTop="17dp"
+                            android:textColor="#304F7A"
+                            android:textSize="15sp"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Estado de la operación -->
+
+                    <TextView
+                        android:id="@+id/tvResultadoNota"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#496E9F"
+                        android:textSize="13sp"
+                        android:gravity="center"
+                        android:visibility="gone"/>
+
+                    <ProgressBar
+                        android:id="@+id/progresoGuardar"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:indeterminateTint="#587DAD"
+                        android:visibility="gone"/>
+
+                    <!-- Guardar -->
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnGuardarNota"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="23dp"
+                        android:text="Guardar mi nota"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="#04172F"
+                        app:cornerRadius="17dp"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Regresar -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVolverDashboard"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Volver a mi espacio"
+                android:textAllCaps="false"
+                android:textColor="#B2000000"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

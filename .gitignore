@@ -1,0 +1,17 @@
+# Archivos locales de Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.db
+jwt_secret.key
+.env
+
+# Archivos generados por Android Studio
+.gradle/
+.kotlin/
+.idea/
+**/build/
+local.properties
+*.apk
+*.aab
